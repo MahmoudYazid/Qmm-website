@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BarComponent from "./Bar/BarComponent"; 
 import HeroComponent from "./Hero/heroComponent"; 
+import ServiceSection from "./ServicesSection/ServiceSection"; 
 export default function Home() {
   return (
    <main className="w-full min-h-screen">
@@ -8,9 +9,7 @@ export default function Home() {
         <BarComponent />
         <HeroComponent />
 
-        <section className="bg-yellow-400 flex items-center justify-center p-4">
-          <h2 className="text-black text-xl md:text-3xl">Part 3</h2>
-        </section>
+        <ServiceSection />
 
         <section className="bg-green-500 flex items-center justify-center p-4">
           <h2 className="text-white text-xl md:text-3xl">Part 4</h2>
