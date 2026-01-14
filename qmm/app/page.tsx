@@ -1,13 +1,12 @@
 import Image from "next/image";
 import BarComponent from "./Bar/BarComponent"; 
+import HeroComponent from "./Hero/heroComponent"; 
 export default function Home() {
   return (
    <main className="w-full min-h-screen">
-      <div className="grid grid-rows-[3fr_6fr_6fr_6fr_6fr_6fr_6fr_6fr] min-h-screen">
+      <div className="grid grid-rows-[3fr_fit_6fr_6fr_6fr_6fr_6fr_6fr] min-h-screen">
         <BarComponent />
-        <section className="bg-orange-500 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 2</h2>
-        </section>
+        <HeroComponent />
 
         <section className="bg-yellow-400 flex items-center justify-center p-4">
           <h2 className="text-black text-xl md:text-3xl">Part 3</h2>
