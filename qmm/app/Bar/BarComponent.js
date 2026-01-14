@@ -80,7 +80,7 @@ const BarComponent = () => {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-700 hover:bg-gray-100"
+            className="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-700 hover:bg-gray-100"
           >
             <svg
               className="h-7 w-7"
@@ -156,11 +156,11 @@ const BarComponent = () => {
               />
             </svg>
             <input
-              className="w-full bg-transparent text-sm outline-none"
+              className="w-full bg-transparent text-sm outline-none placeholder:text-black-500 text-gray-700"
               placeholder="Want to learn?"
             />
-            <button className="rounded-full bg-emerald-50 px-3 py-1.5 text-sm font-medium text-emerald-700">
-              Explore
+            <button className="hover:cursor-pointer rounded-full bg-emerald-50 px-3 py-1.5 text-sm font-medium text-emerald-700">
+              Search
             </button>
           </div>
         </div>
