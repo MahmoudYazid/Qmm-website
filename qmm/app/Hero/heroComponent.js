@@ -136,7 +136,7 @@ const heroComponent = () => {
               <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
                 <div className="grid place-items-center">
                   <div className="relative w-full flex items-center justify-center">
-                    <div className="mx-auto aspect-square w-full rounded-full lg:bg-emerald-600 overflow-visible flex items-end justify-center">
+                    <div className="mx-auto aspect-square w-full rounded-full  overflow-visible flex items-end justify-center">
                       <img
                         src="/smilegirl.png"
                         alt="Student"
@@ -145,8 +145,7 @@ const heroComponent = () => {
                     </div>
                   </div>
 
-                  {/* Decorative dot (stable) */}
-                  <div className="mt-4 h-10 w-10 rounded-full bg-emerald-600" />
+               
                 </div>
               </div>
             </div>
