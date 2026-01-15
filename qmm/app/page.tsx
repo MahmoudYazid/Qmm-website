@@ -2,34 +2,29 @@ import Image from "next/image";
 import BarComponent from "./Bar/BarComponent"; 
 import HeroComponent from "./Hero/heroComponent"; 
 import ServiceSection from "./ServicesSection/ServiceSection"; 
+import PopularClassesComponent from "./PopularClasses/PopularClassesComponent";
+import TutorsSection from "./TutorsSection/TutorsSection";  
+import TestimonialSectionComponent from "./TestimonialSection/TestimonialSectionComponent"; 
+import Footer from "./Footer/Footer"; 
 export default function Home() {
   return (
    <main className="w-full min-h-screen">
-      <div className="grid grid-rows-[3fr_fit_6fr_6fr_6fr_6fr_6fr_6fr] min-h-screen">
+      <div className="grid grid-rows-[3fr_fit_6fr_6fr_6fr_6fr_6fr] min-h-screen">
         <BarComponent />
         <HeroComponent />
 
         <ServiceSection />
 
-        <section className="bg-green-500 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 4</h2>
-        </section>
+        <PopularClassesComponent />
 
-        <section className="bg-teal-500 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 5</h2>
-        </section>
+        <TutorsSection />
 
-        <section className="bg-blue-500 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 6</h2>
-        </section>
+        <TestimonialSectionComponent />
 
-        <section className="bg-indigo-600 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 7</h2>
-        </section>
+    
 
-        <section className="bg-purple-600 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl">Part 8</h2>
-        </section>
+   
+            <Footer />
       </div>
     </main>
   );
