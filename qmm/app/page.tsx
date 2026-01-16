@@ -6,6 +6,7 @@ import PopularClassesComponent from "./PopularClasses/PopularClassesComponent";
 import TutorsSection from "./TutorsSection/TutorsSection";  
 import TestimonialSectionComponent from "./TestimonialSection/TestimonialSectionComponent"; 
 import Footer from "./Footer/Footer"; 
+import PopUpCoursesComponent from "./PopUpCoursesComponent/PopUpCoursesComponent";
 export default function Home() {
   return (
    <main className="w-full min-h-screen">
@@ -20,11 +21,8 @@ export default function Home() {
         <TutorsSection />
 
         <TestimonialSectionComponent />
-
-    
-
-   
             <Footer />
+            <PopUpCoursesComponent />
       </div>
     </main>
   );

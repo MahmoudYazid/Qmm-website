@@ -1,8 +1,13 @@
 "use client";
 // app/components/ServicesSection.jsx
 import React from "react";
+import { useCourseModalStore } from "../Store/courseModal.store";
 
 const ServicesSection = () => {
+      const OpenModal = useCourseModalStore((s) => s.open);
+      const CloseModal = useCourseModalStore((s) => s.close);
+
+  
   return (
     <section className="w-full bg-white py-12 lg:py-16 overflow-x-hidden">
       <div className="mx-auto max-w-6xl px-4">
@@ -74,9 +79,12 @@ const ServicesSection = () => {
                 most recent developments.
               </p>
 
-              <a
+                        <div
                 href="#"
-                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white hover:opacity-90"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -88,7 +96,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
 
             {/* CARD 2 */}
@@ -140,9 +148,12 @@ const ServicesSection = () => {
                 most recent advancements in web.
               </p>
 
-              <a
+              <div
                 href="#"
                 className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -154,7 +165,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
 
             {/* CARD 3 */}
@@ -195,9 +206,12 @@ const ServicesSection = () => {
                 cover the most recent trends
               </p>
 
-              <a
+                       <div
                 href="#"
                 className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -209,7 +223,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
  {/* CARD 1 (GREEN) */}
             <div
@@ -254,9 +268,12 @@ const ServicesSection = () => {
                 most recent developments.
               </p>
 
-              <a
+                       <div
                 href="#"
-                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white hover:opacity-90"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -268,7 +285,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
 
             {/* CARD 2 */}
@@ -320,9 +337,12 @@ const ServicesSection = () => {
                 most recent advancements in web.
               </p>
 
-              <a
+                       <div
                 href="#"
                 className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -334,7 +354,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
 
             {/* CARD 3 */}
@@ -375,9 +395,12 @@ const ServicesSection = () => {
                 cover the most recent trends
               </p>
 
-              <a
+                        <div
                 href="#"
                 className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+                              onClick={OpenModal}
+
+
               >
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -389,7 +412,7 @@ const ServicesSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </div>
             </div>
             {/* ADD NEW CARD:
                 copy one card block and paste here.
