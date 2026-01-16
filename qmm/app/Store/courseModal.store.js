@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export const useCourseModalStore = create((set) => ({
-  state: "open",
+  state: "close",
   Data: {
     title: "test",
     level: "John Doe",
