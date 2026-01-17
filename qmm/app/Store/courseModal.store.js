@@ -11,9 +11,10 @@ export const useCourseModalStore = create((set) => ({
     instructor: "John Doe",
     rating: "5h 30m",
   },
-
+   CurrentPage:"Mainpage",
+   ChangeCurrentPage: (page) => set({ CurrentPage: page }),
+  SetData: (data) => set({ Data: data }),
   open: () => set({ state: "open"  }),
   close: () => set({ state: "close" }),
-  ChangeTitle: () => set({ state: "close" }),
 
 }));

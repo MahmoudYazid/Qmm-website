@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
+import { useCourseModalStore } from "../Store/courseModal.store";
 const BarComponent = () => {
   const [open, setOpen] = useState(false);
+  const ChangeCurrentPageState = useCourseModalStore((s) => s.ChangeCurrentPage);
 
   useEffect(() => {
     if (!open) return;
@@ -58,12 +59,12 @@ const BarComponent = () => {
 
           {/* Desktop Links */}
           <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
-            <a className="hover:text-[#FACE68]" href="#">
+            <div className="hover:text-[#FACE68]" href="#" onClick={()=> ChangeCurrentPageState("Mainpage")}>
               Home
-            </a>
-            <a className="hover:text-[#FACE68]" href="#">
+            </div>
+            <div className="hover:text-[#FACE68]" onClick={()=> ChangeCurrentPageState("AboutUs")}>
               About us
-            </a>
+            </div>
             <a className="hover:text-[#FACE68]" href="#">
               Courses
             </a>
@@ -169,20 +170,24 @@ const BarComponent = () => {
         <nav className="p-4">
           <ul className="space-y-2 text-sm font-medium text-gray-700">
             {[
-              ["Home", "#"],
-              ["About us", "#"],
-              ["Courses", "#"],
-              ["Contact us", "#"],
-              ["FAQ's", "#"],
-            ].map(([label, href]) => (
+              ["Home"],
+              ["About us"],
+              ["Courses"],
+              ["Contact us"],
+              ["FAQ's"],
+            ].map(([label]) => (
               <li key={label}>
-                <a
+                <div
                   className="block rounded-lg px-3 py-2 hover:bg-gray-50 hover:text-[#FACE68]"
-                  href={href}
-                  onClick={() => setOpen(false)}
+                  
+                  onClick={()=> label==="About us" ? ChangeCurrentPageState("AboutUs") : 
+                     label ==="Home" ? ChangeCurrentPageState("Mainpage"):
+                    
+                    
+                    null}
                 >
                   {label}
-                </a>
+                </div>
               </li>
             ))}
           </ul>

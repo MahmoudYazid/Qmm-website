@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import BarComponent from "./Bar/BarComponent"; 
 import HeroComponent from "./Hero/heroComponent"; 
@@ -8,17 +7,23 @@ import TutorsSection from "./TutorsSection/TutorsSection";
 import TestimonialSectionComponent from "./TestimonialSection/TestimonialSectionComponent"; 
 import Footer from "./Footer/Footer"; 
 import PopUpCoursesComponent from "./PopUpCoursesComponent/PopUpCoursesComponent";
-import { useCourseModalStore } from "./Store/courseModal.store";
-import Mainpage from "./MainPage";
-import AboutUs from "./SidePages/AboutUs/AboutUs";
-export default function Home() {
-    const ChangeCurrentPageState = useCourseModalStore((s) => s.CurrentPage);
-  
+export default function MainPage() {
   return (
-    ChangeCurrentPageState === "Mainpage" ? (
-      <Mainpage />
-    ) : ChangeCurrentPageState === "AboutUs" ? (
-      <AboutUs />
-    ) : null
+   <main className="w-full min-h-screen">
+      <div className="grid grid-rows-[3fr_fit_6fr_6fr_6fr_6fr_6fr] min-h-screen">
+        <BarComponent />
+        <HeroComponent />
+
+        <ServiceSection />
+
+        <PopularClassesComponent />
+
+        <TutorsSection />
+
+        <TestimonialSectionComponent />
+            <Footer />
+            <PopUpCoursesComponent />
+      </div>
+    </main>
   );
 }
