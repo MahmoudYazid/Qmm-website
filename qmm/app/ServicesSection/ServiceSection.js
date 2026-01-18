@@ -21,7 +21,7 @@ const ServicesSection = () => {
     draggable: true,
     swipeToSlide: true,
     touchThreshold: 5,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     
     responsive: [
