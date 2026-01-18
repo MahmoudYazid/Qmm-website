@@ -3,9 +3,9 @@ import React from "react";
 
 export default function GreenServiceCard({ onLearnMore }) {
   return (
-    <div className="rounded-2xl bg-emerald-500 p-8 shadow-lg min-h-[280px] flex flex-col justify-between">
+    <div className="rounded-2xl bg-emerald-500 p-8 shadow-lg h-full flex flex-col justify-between">
       <div>
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-2 mb-6">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 text-white flex-shrink-0">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path

@@ -1,7 +1,6 @@
 "use client";
 import DashboardShell from "./components/DashboardShell.js";
 import TopBar from "./components/TopBar.js";
-import StatsGrid from "./components/StatsGrid.js";
 import CourseManager from "./components/CourseManager.js";
 import CoachManager from "./components/CoachManager.js";
 

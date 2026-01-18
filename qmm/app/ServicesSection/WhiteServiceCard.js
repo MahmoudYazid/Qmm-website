@@ -64,7 +64,7 @@ export default function WhiteServiceCard({
   };
 
   return (
-    <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-black/5 min-h-[280px] flex flex-col justify-between">
+    <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-black/5 h-full flex flex-col justify-between">
       <div>
         <div className="flex items-center gap-4 mb-6">
           <div
