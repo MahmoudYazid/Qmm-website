@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useCourseModalStore } from "../Store/courseModal.store";
 
@@ -10,38 +10,43 @@ import "slick-carousel/slick/slick-theme.css";
 import GreenServiceCard from "./GreenServiceCard";
 import WhiteServiceCard from "./WhiteServiceCard";
 
-// ✅ important: react-slick client-only (no SSR)
-const Slick = dynamic(() => import("react-slick"), { ssr: false });
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function ServicesSection() {
   const OpenModal = useCourseModalStore((s) => s.open);
+
   const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
 
-const settings = {
-  dots: true,
-  arrows: false,
-  infinite: true,
-  speed: 500,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  cssEase: "ease-in-out",
-  draggable: true,
-  swipeToSlide: true,
-  touchThreshold: 5,
+    const onResize = () => {
+      setIsDesktop(window.innerWidth >= 768); // breakpoint بتاعك
+    };
 
-  mobileFirst: true,     // ✅ key point
-  slidesToShow: 1,       // ✅ default = mobile
-  slidesToScroll: 1,
+    onResize(); // initial
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
-  responsive: [
-    {
-      breakpoint: 768,   // ✅ means >= 768 because mobileFirst:true
-      settings: { slidesToShow: 2, slidesToScroll: 1 },
-    },
-  ],
-};
+  const settings = useMemo(
+    () => ({
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      cssEase: "ease-in-out",
+      draggable: true,
+      swipeToSlide: true,
+      touchThreshold: 5,
+      slidesToShow: isDesktop ? 3 : 1,
+      slidesToScroll: 1,
+    }),
+    [isDesktop]
+  );
 
   const Slide = ({ children }) => (
     <div className="h-full">
@@ -52,7 +57,6 @@ const settings = {
   return (
     <section className="w-full bg-white py-12 lg:py-16 overflow-x-hidden">
       <div className="mx-auto max-w-6xl px-4">
-        {/* Heading */}
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-emerald-600">Our Services</p>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
@@ -62,11 +66,11 @@ const settings = {
           </h2>
         </div>
 
-        {/* Slider */}
         <div className="relative -mx-3 overflow-hidden">
           {mounted ? (
-            <Slick
+            <Slider
               {...settings}
+              key={isDesktop ? "desktop" : "mobile"} 
               className="[&_.slick-list]:overflow-hidden [&_.slick-slide>div]:px-3"
             >
               <Slide>
@@ -92,10 +96,9 @@ const settings = {
                   onLearnMore={OpenModal}
                 />
               </Slide>
-            </Slick>
+            </Slider>
           ) : (
-            // ✅ SSR fallback (no weird refresh layout)
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-6">
               <GreenServiceCard onLearnMore={OpenModal} />
               <WhiteServiceCard
                 title="UX Design Course"
